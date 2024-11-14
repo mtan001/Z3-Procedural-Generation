@@ -14,7 +14,9 @@ class Decor extends Phaser.Scene {
     create() {
         console.log("decor!");
         let decorArray = Array.from({ length: tinyTownGrid.length }, () => Array(tinyTownGrid[0].length).fill(this.TRANSPARENT));
-        decorArray[wheelbarrow[0]][wheelbarrow[1]] = this.WHEELBARROW;
+        for(let i = 0; i < wheelbarrow.length; i++){
+            decorArray[wheelbarrow[i][0]][wheelbarrow[i][1]] = this.WHEELBARROW;
+        }
         
         const decor = this.make.tilemap({
             data: decorArray,
